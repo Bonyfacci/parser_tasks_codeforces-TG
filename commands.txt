@@ -1,0 +1,20 @@
+Создать виртуальное окружение
+pip install django - установить библиотеку Django
+pip install python-dotenv - установить библиотеку для чтения .env-файлов
+pip install pillow - установить библиотеку для обработки изображений
+pip install psycopg2 - установить библиотеку(адаптер) для взаимодействия с базой данных PostgreSQL
+pip freeze > requirements.txt - создать список зависимостей
+pip install -r requirements.txt - установить все зависимости
+django-admin - все команды Django
+django-admin startproject config . - создание Django проекта
+python manage.py runserver - запуск проекта Django
+python manage.py makemigrations - создание новых миграций на основе изменений
+python manage.py migrate - применение и отмена миграций
+
+python manage.py startapp app_home - создать приложение app_home
+
+***
+Команды для базы данных
+psql -U postgres
+create database my_project;
+\q
