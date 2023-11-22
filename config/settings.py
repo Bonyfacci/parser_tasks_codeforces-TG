@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # DjangoRESTFramework
+    'rest_framework',
+
     # Приложения - Домашняя страница
     'app_home.apps.AppHomeConfig',
 
