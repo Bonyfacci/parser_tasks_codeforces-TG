@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'app_home.apps.AppHomeConfig',
 
     # Дипломы
-    'diploma_task_parser.apps.AppHomeConfig',
+    'diploma_task_parser.apps.DiplomaTaskParserConfig',
 ]
 
 MIDDLEWARE = [
