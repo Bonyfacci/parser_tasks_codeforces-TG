@@ -36,10 +36,8 @@ class Command(BaseCommand):
 
         asyncio.run(self.main())
 
-    @sync_to_async
-    def get_topics(self):
-        my_list = list(Topic.objects.all().values('name'))
-        return my_list
+    async def get_topics(self):
+        return await Topic.objects.all().values('name')
 
     # Запуск процесса поллинга новых апдейтов
     async def main(self):
