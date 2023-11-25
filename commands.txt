@@ -3,8 +3,9 @@ pip install django - установить библиотеку Django
 pip install python-dotenv - установить библиотеку для чтения .env-файлов
 pip install pillow - установить библиотеку для обработки изображений
 pip install psycopg2 - установить библиотеку(адаптер) для взаимодействия с базой данных PostgreSQL
-pip install djangorestframework - установить библиотеку DjangoRESTFramework программный интерфейс приложения,
+pip install djangorestframework - установить библиотеку DjangoRESTFramework - программный интерфейс приложения,
                                   соответствующий ограничениям архитектурного стиля REST
+pip install requests - установить библиотеку для работы с HTTP-запросами
 pip freeze > requirements.txt - создать список зависимостей
 pip install -r requirements.txt - установить все зависимости
 django-admin - все команды Django
@@ -20,3 +21,8 @@ python manage.py startapp app_home - создать приложение app_hom
 psql -U postgres
 create database my_project;
 \q
+
+python manage.py dbshell - для проверки операций с базой данных
+python manage.py makemigrations --dry-run - для проверки операций вашего состояния
+python manage.py migrate --list - Показывает все миграции в проекте.
+python manage.py migrate --run-syncdb - Позволяет создавать таблицы для приложений без миграции.
