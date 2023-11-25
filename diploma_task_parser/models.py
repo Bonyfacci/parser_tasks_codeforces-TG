@@ -23,9 +23,9 @@ class Task(models.Model):
     """
     Сущность задачи
     """
-    contest_id = models.PositiveIntegerField(unique=True, verbose_name='id Конкурсной задачи', **NULLABLE,
+    contest_id = models.PositiveIntegerField(verbose_name='id Конкурсной задачи', **NULLABLE,
                                              help_text='1, 2, 3, ...')
-    contest_index = models.CharField(unique=True, max_length=10, verbose_name='index Конкурсной задачи',
+    contest_index = models.CharField(max_length=10, verbose_name='index Конкурсной задачи',
                                      help_text='A, B, C, ...')
     name = models.CharField(max_length=255, verbose_name='Наименование задачи', **NULLABLE)
     type = models.CharField(max_length=150, verbose_name='Тип задачи', help_text='PROGRAMMING, QUESTION, ...')
@@ -45,4 +45,5 @@ class Task(models.Model):
     class Meta:
         verbose_name = 'Задача'
         verbose_name_plural = 'Задачи'
+        unique_together = ('contest_id', 'contest_index')
         ordering = ('solved_count',)
