@@ -6,6 +6,7 @@ pip install psycopg2 - установить библиотеку(адаптер)
 pip install djangorestframework - установить библиотеку DjangoRESTFramework - программный интерфейс приложения,
                                   соответствующий ограничениям архитектурного стиля REST
 pip install requests - установить библиотеку для работы с HTTP-запросами
+pip install aiogram - установить библиотеку для работы с Telegram
 pip freeze > requirements.txt - создать список зависимостей
 pip install -r requirements.txt - установить все зависимости
 django-admin - все команды Django
@@ -15,11 +16,15 @@ python manage.py makemigrations - создание новых миграций �
 python manage.py migrate - применение и отмена миграций
 
 python manage.py startapp app_home - создать приложение app_home
+python manage.py startapp diploma_task_parser - создать приложение diploma_task_parser (Парсер задач Codeforces)
+
+
 
 ***
 Команды для базы данных
 psql -U postgres
-create database my_project;
+create database my_project; - создать таблицу my_project
+drop database my_project; - удалить таблицу my_project
 \q
 
 python manage.py dbshell - для проверки операций с базой данных
