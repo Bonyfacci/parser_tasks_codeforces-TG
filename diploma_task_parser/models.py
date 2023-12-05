@@ -38,9 +38,10 @@ class Task(models.Model):
     category = models.ManyToManyField(Topic, verbose_name='Темы задачи', help_text='Теги задачи')
 
     def __str__(self):
-        return f'Задача: {str(self.contest_id) + str(self.contest_index)} {self.name}' \
-               f'\nРейтинг: {self.rating}' \
-               f'\nКоличество решений задач: {self.solved_count}'
+        return f'Задача: {str(self.contest_id) + str(self.contest_index)}   {self.name}' \
+               f'\n       Баллы:   {self.points}' \
+               f'\n       Рейтинг:   {self.rating}' \
+               f'\n       Количество решений задач:   {self.solved_count}'
 
     class Meta:
         verbose_name = 'Задача'
