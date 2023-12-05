@@ -41,8 +41,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # Приложения
-    'app_home.apps.AppHomeConfig'
+    # DjangoRESTFramework
+    'rest_framework',
+
+    # Приложения - Домашняя страница
+    'app_home.apps.AppHomeConfig',
+
+    # Дипломы
+    'diploma_task_parser.apps.DiplomaTaskParserConfig',
 ]
 
 MIDDLEWARE = [

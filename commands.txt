@@ -1,0 +1,36 @@
+Создать виртуальное окружение
+pip install django - установить библиотеку Django
+pip install python-dotenv - установить библиотеку для чтения .env-файлов
+pip install pillow - установить библиотеку для обработки изображений
+pip install psycopg2 - установить библиотеку(адаптер) для взаимодействия с базой данных PostgreSQL
+pip install djangorestframework - установить библиотеку DjangoRESTFramework - программный интерфейс приложения,
+                                  соответствующий ограничениям архитектурного стиля REST
+pip install requests - установить библиотеку для работы с HTTP-запросами
+pip install aiogram - установить библиотеку для работы с Telegram
+pip install asyncpg -
+pip install celery - установить библиотеку для асинхронной обработки задач и создания распределенных приложений
+pip install redis - установить библиотеку для общения с сервером Redis
+pip freeze > requirements.txt - создать список зависимостей
+pip install -r requirements.txt - установить все зависимости
+django-admin - все команды Django
+django-admin startproject config . - создание Django проекта
+python manage.py runserver - запуск проекта Django
+python manage.py makemigrations - создание новых миграций на основе изменений
+python manage.py migrate - применение и отмена миграций
+
+python manage.py startapp app_home - создать приложение app_home
+python manage.py startapp diploma_task_parser - создать приложение diploma_task_parser (Парсер задач Codeforces)
+
+
+
+***
+Команды для базы данных
+psql -U postgres
+create database my_project; - создать таблицу my_project
+drop database my_project; - удалить таблицу my_project
+\q
+
+python manage.py dbshell - для проверки операций с базой данных
+python manage.py makemigrations --dry-run - для проверки операций вашего состояния
+python manage.py migrate --list - Показывает все миграции в проекте.
+python manage.py migrate --run-syncdb - Позволяет создавать таблицы для приложений без миграции.
