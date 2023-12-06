@@ -1,13 +1,14 @@
 from aiogram import Bot
 from aiogram.types import Message
 
+from config import settings
 from diploma_task_parser.management.commands.keyboards.reply import get_reply_keyboard
 from diploma_task_parser.management.commands.utils.commands import set_command
 
 
 async def start_bot(bot: Bot):
     await set_command(bot)
-    await bot.send_message(6534158543, text='Внимание! Бот запущен!')
+    await bot.send_message(settings.TELEGRAM_ID, text='Внимание! Бот запущен!')
 
 
 async def start(message: Message):
@@ -19,4 +20,4 @@ async def start(message: Message):
 
 
 async def stop_bot(bot: Bot):
-    await bot.send_message(6534158543, text='Внимание! Бот выключен!')
+    await bot.send_message(settings.TELEGRAM_ID, text='Внимание! Бот выключен!')

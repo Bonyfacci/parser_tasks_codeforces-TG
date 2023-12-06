@@ -48,5 +48,12 @@ celery -A config beat -l info -S django
 
 
 ***
+Команды для Docker
+docker-compose build
+docker-compose up
+
+
+
+***
 Команды для запуска test-ов
 coverage run --source='.' manage.py test
