@@ -9,6 +9,8 @@ pip install requests - установить библиотеку для рабо
 pip install aiogram - установить библиотеку для работы с Telegram
 pip install asyncpg -
 pip install celery - установить библиотеку для асинхронной обработки задач и создания распределенных приложений
+pip install django-celery-beat -
+pip install eventlet -
 pip install redis - установить библиотеку для общения с сервером Redis
 pip freeze > requirements.txt - создать список зависимостей
 pip install -r requirements.txt - установить все зависимости
@@ -34,3 +36,10 @@ python manage.py dbshell - для проверки операций с базо�
 python manage.py makemigrations --dry-run - для проверки операций вашего состояния
 python manage.py migrate --list - Показывает все миграции в проекте.
 python manage.py migrate --run-syncdb - Позволяет создавать таблицы для приложений без миграции.
+
+
+
+***
+Команды для запуска celery на Windows
+celery -A config worker -l INFO -P eventlet
+celery -A config beat -l info -S django
