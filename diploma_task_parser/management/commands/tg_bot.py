@@ -6,7 +6,7 @@ from django.core.management import BaseCommand
 
 from aiogram.filters.command import Command as TGCommand
 
-from diploma_task_parser.management.commands.handlers.basic import hello, get_location, \
+from diploma_task_parser.management.commands.handlers.basic import hello, \
     get_help, dice, bowling, slot_machine, dart, football, basketball, get_menu, get_cancel
 from diploma_task_parser.management.commands.handlers.callback import select_topics, select_task
 from diploma_task_parser.management.commands.handlers.start_stop import start_bot, stop_bot, start

@@ -33,7 +33,7 @@ class Codeforces:
             json.dump(self.tasks, file, indent=4, ensure_ascii=False)
 
     def writing_topics_to_database(self):
-        Topic.objects.all().delete()
+        # Topic.objects.all().delete()
         for i in self.tasks:
             for topic in i['tags']:
                 if not Topic.objects.filter(name=topic).exists():
@@ -42,7 +42,7 @@ class Codeforces:
                     )
 
     def writing_tasks_to_database(self):
-        Task.objects.all().delete()
+        # Task.objects.all().delete()
 
         for task in self.tasks:
             with transaction.atomic():
