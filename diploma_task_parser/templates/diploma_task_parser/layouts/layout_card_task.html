@@ -1,0 +1,28 @@
+<div class="col-3">
+    <div class="card mb-4 box-shadow">
+        <div class="card-header" style="height:75px">
+            <h4 class="my-0 font-weight-normal">{{ object.name }}</h4>
+        </div>
+        <div class="card-body">
+            <p>
+                {{ object.contest_id }}{{ object.contest_index }}
+            </p>
+                <hr/>
+            <p>
+                Количество очков: {{ object.points }}
+                <br/>
+                Рейтинг задачи (Сложность): {{ object.rating }}
+                <br/>
+                Количество решений: {{ object.solved_count }}
+            </p>
+        </div>
+        <div class="card-footer">
+            <p>
+                Категории:
+                {% for object in object.category %}
+                {{ object.name }}
+                {% endfor %}
+            </p>
+        </div>
+    </div>
+</div>

@@ -51,6 +51,6 @@ def get_topics():
 def get_tasks(query):
     topic = Topic.objects.get(name=query['topic'])
     tasks = []
-    for i in Task.objects.all().filter(category=topic.id).filter(rating=query['rating']).order_by('-solved_count')[:3]:
+    for i in Task.objects.all().filter(category=topic.id).filter(rating__lte=query['rating']).order_by('-solved_count')[:3]:
         tasks.append(i.__str__())
     return '\n\n'.join(tasks)
