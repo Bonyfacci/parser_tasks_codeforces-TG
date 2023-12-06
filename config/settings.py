@@ -154,12 +154,17 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # Телеграм
-# TELEGRAM_API_TOKEN = os.getenv('TELEGRAM_API_TOKEN')  # Тут Ваш токен, который выдал - BotFather
+
+# Тут Ваш токен, который выдал - BotFather - https://t.me/BotFather
+TELEGRAM_API_TOKEN = os.getenv('TELEGRAM_API_TOKEN')
+
+# Тут Ваш id, который выдаёт - Get My ID - https://t.me/getmyid_bot
+TELEGRAM_ID = os.getenv('TELEGRAM_ID')
 
 # URL-адрес брокера результатов, также Redis
-CELERY_BROKER_URL = 'redis://127.0.0.1:6379/0'  # 'redis://redis:6379/0'
+CELERY_BROKER_URL = 'redis://redis:6379/0'
 
-CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379/0'  # 'redis://redis:6379/0'
+CELERY_RESULT_BACKEND = 'redis://redis:6379/0'
 
 # Часовой пояс для работы Celery
 CELERY_TIMEZONE = 'Europe/Madrid'
@@ -174,6 +179,6 @@ CELERY_TASK_TIME_LIMIT = 30 * 60
 CELERY_BEAT_SCHEDULE = {
     'check_topic_and_task': {
         'task': 'diploma_task_parser.tasks.check_topic_and_task',  # Путь к задаче
-        'schedule': timedelta(minutes=60),  # Расписание выполнения задачи (например, каждые 10 минут)
+        'schedule': timedelta(minutes=10),  # Расписание выполнения задачи (например, каждые 10 минут)
     },
 }
