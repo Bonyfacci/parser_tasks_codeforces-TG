@@ -1,3 +1,4 @@
+from django.shortcuts import render
 from rest_framework import generics
 
 from diploma_task_parser.models import Task
@@ -10,9 +11,15 @@ class TaskListAPIView(generics.ListAPIView):
     """
 
     serializer_class = TaskSerializer
+    template_name = 'diploma_task_parser/task_list.html'
 
     def get_queryset(self,):
-        return Task.objects.filter(category=self.kwargs.get('pk'))
+        return Task.objects.filter(category=self.kwargs.get('pk')).order_by("-solved_count")
+
+    def list(self, request, *args, **kwargs):
+        queryset = self.filter_queryset(self.get_queryset())
+        serializer = self.get_serializer(queryset, many=True)
+        return render(request, self.template_name, {'object_list': serializer.data})
 
 
 class TaskCreateAPIView(generics.CreateAPIView):

@@ -1,0 +1,21 @@
+{% extends 'diploma_task_parser/layouts/layout_base.html' %}
+
+{% block title %}Дипломная работа №1{% endblock %}
+
+
+{% block content %}
+
+<div class="container p-5">
+    <div class="row text-center">
+        {% for object in object_list %}
+            {% include 'diploma_task_parser/layouts/layout_card_task.html' %}
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
+
+
+{% block element %}
+
+{% endblock %}

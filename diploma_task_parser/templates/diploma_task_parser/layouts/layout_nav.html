@@ -6,9 +6,27 @@
     </div>
     <div id="nav-content">
         <div class="nav-button">
+            <a href="{% url 'app_home:home' %}">
+                <i class="fas fa-splotch"></i>
+                <span>Главная</span>
+            </a>
+        </div>
+        <div class="nav-button">
             <a href="{% url 'diploma_task_parser:home' %}">
                 <i class="fas fa-palette"></i>
                 <span>Дип. работа №1</span>
+            </a>
+        </div>
+        <div class="nav-button">
+            <a href="{% url 'diploma_task_parser:topic_list' %}">
+                <i class="fas fa-cog"></i>
+                <span>Темы</span>
+            </a>
+        </div>
+        <div class="nav-button">
+            <a href="{# url 'diploma_task_parser:tasks_list' #}">
+                <i class="fas fa-layer-group"></i>
+                <span>Задачи</span>
             </a>
         </div>
         <div id="nav-content-highlight"></div>
