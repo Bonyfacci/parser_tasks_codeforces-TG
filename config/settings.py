@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
+from datetime import timedelta
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -43,6 +44,9 @@ INSTALLED_APPS = [
 
     # DjangoRESTFramework
     'rest_framework',
+
+    # Распределенная система обработки задач в фоновом режиме
+    'django_celery_beat',
 
     # Приложения - Домашняя страница
     'app_home.apps.AppHomeConfig',
@@ -147,3 +151,29 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Телеграм
+# TELEGRAM_API_TOKEN = os.getenv('TELEGRAM_API_TOKEN')  # Тут Ваш токен, который выдал - BotFather
+
+# URL-адрес брокера результатов, также Redis
+CELERY_BROKER_URL = 'redis://127.0.0.1:6379/0'  # 'redis://redis:6379/0'
+
+CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379/0'  # 'redis://redis:6379/0'
+
+# Часовой пояс для работы Celery
+CELERY_TIMEZONE = 'Europe/Madrid'
+
+# Флаг отслеживания выполнения задач
+CELERY_TASK_TRACK_STARTED = True
+
+# Максимальное время на выполнение задачи
+CELERY_TASK_TIME_LIMIT = 30 * 60
+
+# Настройки для выполнения периодических задач
+CELERY_BEAT_SCHEDULE = {
+    'check_topic_and_task': {
+        'task': 'diploma_task_parser.tasks.check_topic_and_task',  # Путь к задаче
+        'schedule': timedelta(minutes=60),  # Расписание выполнения задачи (например, каждые 10 минут)
+    },
+}
