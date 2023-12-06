@@ -45,6 +45,9 @@ INSTALLED_APPS = [
     # DjangoRESTFramework
     'rest_framework',
 
+    # Документация
+    'drf_yasg',
+
     # Распределенная система обработки задач в фоновом режиме
     'django_celery_beat',
 
