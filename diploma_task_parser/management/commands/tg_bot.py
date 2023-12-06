@@ -6,6 +6,7 @@ from django.core.management import BaseCommand
 
 from aiogram.filters.command import Command as TGCommand
 
+from config import settings
 from diploma_task_parser.management.commands.handlers.basic import hello, \
     get_help, dice, bowling, slot_machine, dart, football, basketball, get_menu, get_cancel
 from diploma_task_parser.management.commands.handlers.callback import select_topics, select_task
@@ -27,7 +28,7 @@ class Command(BaseCommand):
             format="%(asctime)s - [%(levelname)s] - %(name)s - "
                    "(%(filename)s).%(funcName)s(%(lineno)d) - %(message)s"
         )
-        bot = Bot(token="6951316725:AAGHFJKP1CNumDSA9vT4hXdC5BBb2PV5dQE", parse_mode='HTML')
+        bot = Bot(token=settings.TELEGRAM_API_TOKEN, parse_mode='HTML')
 
         dp = Dispatcher()
 
