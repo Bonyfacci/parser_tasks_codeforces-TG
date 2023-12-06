@@ -2,6 +2,7 @@ from django.shortcuts import render
 from rest_framework import generics
 
 from diploma_task_parser.models import Task
+from diploma_task_parser.paginators import TaskPaginator
 from diploma_task_parser.serializers.task import TaskSerializer
 
 
@@ -11,6 +12,7 @@ class TaskListAPIView(generics.ListAPIView):
     """
 
     serializer_class = TaskSerializer
+    pagination_class = TaskPaginator
     template_name = 'diploma_task_parser/task_list.html'
 
     def get_queryset(self,):

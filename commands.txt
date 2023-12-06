@@ -12,6 +12,7 @@ pip install celery - установить библиотеку для асинх
 pip install django-celery-beat -
 pip install eventlet -
 pip install redis - установить библиотеку для общения с сервером Redis
+pip install coverage -
 pip freeze > requirements.txt - создать список зависимостей
 pip install -r requirements.txt - установить все зависимости
 django-admin - все команды Django
@@ -43,3 +44,9 @@ python manage.py migrate --run-syncdb - Позволяет создавать т
 Команды для запуска celery на Windows
 celery -A config worker -l INFO -P eventlet
 celery -A config beat -l info -S django
+
+
+
+***
+Команды для запуска test-ов
+coverage run --source='.' manage.py test
